@@ -28,8 +28,9 @@ function GMObject(_owner, _type) constructor{
         return self;
     }
 	
-    ///@description Every step, run each component's update function
+    ///@description Every step logic
 	static onStep = function(){
+        // parse through components and run update functions, if any
         var componentNamesLength = array_length(self.componentNames);
 		if (componentNamesLength > 0){
 			for (var i = 0; i < componentNamesLength; i++){
