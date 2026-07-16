@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"interaction_event_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"interaction_event_Class",
+  "parent":{
+    "name":"interactable_component",
+    "path":"folders/Core/objects/components/interactable_component.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

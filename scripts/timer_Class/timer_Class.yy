@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"timer_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"timer_Class",
+  "parent":{
+    "name":"utilities",
+    "path":"folders/Core/utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

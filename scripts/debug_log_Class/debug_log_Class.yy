@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"debug_log_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"debug_log_Class",
+  "parent":{
+    "name":"utilities",
+    "path":"folders/Core/utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"interactable_component_ObjComp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"interactable_component_ObjComp",
+  "parent":{
+    "name":"interactable_component",
+    "path":"folders/Core/objects/components/interactable_component.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

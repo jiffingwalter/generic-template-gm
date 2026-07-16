@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"condMovementPressed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"condMovementPressed",
+  "parent":{
+    "name":"actionConditions",
+    "path":"folders/Core/editor/gizmos/player_temp/states/actionConditions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

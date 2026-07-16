@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"gmobject_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gmobject_Class",
+  "parent":{
+    "name":"objects",
+    "path":"folders/Core/objects.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

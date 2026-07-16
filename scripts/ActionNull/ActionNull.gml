@@ -1,0 +1,3 @@
+function ActionNull(){
+	return true;
+}

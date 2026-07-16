@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ActionMoveFromInput",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ActionMoveFromInput",
+  "parent":{
+    "name":"stateActions",
+    "path":"folders/Core/editor/gizmos/player_temp/states/stateActions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

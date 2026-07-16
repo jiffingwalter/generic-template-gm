@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"state_action_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"state_action_Class",
+  "parent":{
+    "name":"state_machine",
+    "path":"folders/Core/utilities/state_machine.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

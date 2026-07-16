@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PROJECT",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PROJECT",
+  "parent":{
+    "name":"GenericTemplate",
+    "path":"GenericTemplate.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
