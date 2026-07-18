@@ -1,7 +1,7 @@
 event_inherited();
 
 /// Initialize components
-self.util.addComponent(new InteractableObjComponent(self));
+self.util.addComponent(new InteractableComponent(self));
 
 
 self.components.interactable.interactions = [

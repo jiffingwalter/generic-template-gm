@@ -1,12 +1,14 @@
 /// @description Component to enable interaction on an object from the player when the "INTERACT" input is pressed within its interaction zone
-/// @param {Struct} ownerIn: Owning object reference
+/// @param {Asset.GMObject} ownerIn: Owning object reference
 /// @param {Real} distanceIn: The distance of the interaction zone that defines if the object is in interactable range. Defaults to 32.
 /// @param {Real} zoneOffsetXIn: X offset of the interaction zone Defaults to 0.
 /// @param {Real} zoneOffsetYIn: Y offset of the interaction zone. Defaults to 0.
-/// @param {Array<Object>} allowableInteractorsIn: Any specific objects that are allowed to interact on the owning object. Default is 
-function InteractableObjComponent(ownerIn = undefined, distanceIn = 32, zoneOffsetXIn = 0, zoneOffsetYIn = 0, allowableInteractorsIn = [object_generic]) constructor {
-    componentName = "interactable";
-    owner = ownerIn;
+/// @param {Array<Asset.GMObject>} allowableInteractorsIn: Any specific GMObjects that are allowed to interact on the owning object. Default is 
+function 
+InteractableComponent
+    (ownerIn, distanceIn = 32, zoneOffsetXIn = 0, zoneOffsetYIn = 0, allowableInteractorsIn = [object_generic_GMObject]) : 
+ObjectComponent(ownerIn, "interactable")
+ constructor {
     distance = distanceIn; 
     zoneOffsetX = zoneOffsetXIn;
     zoneOffsetY = zoneOffsetYIn;

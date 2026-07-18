@@ -17,7 +17,7 @@ function ObjectUtility(GMObject) constructor{
     }
     
     ///@description Add a new component to an object and validate
-    ///@param {InteractableObjComponent} newComponent: New initialized component function
+    ///@param {Asset.ObjectComponent} newComponent: New initialized component function
     ///@returns {Asset.GMObject} updated GameMaker object for method chaining
     static addComponent = function(newComponent){
         var newComponentName = newComponent.componentName;

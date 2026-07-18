@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"object_component_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"object_component_Class",
+  "parent":{
+    "name":"components",
+    "path":"folders/Core/objects/components.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"interactable_component_ObjComp",
+  "%Name":"interactable_Component",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"interactable_component_ObjComp",
+  "name":"interactable_Component",
   "parent":{
     "name":"interactable_component",
     "path":"folders/Core/objects/components/interactable_component.yy",
