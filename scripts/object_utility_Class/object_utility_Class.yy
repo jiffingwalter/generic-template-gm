@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"gmobject_Class",
+  "%Name":"object_utility_Class",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"gmobject_Class",
+  "name":"object_utility_Class",
   "parent":{
     "name":"objects",
     "path":"folders/Core/objects.yy",

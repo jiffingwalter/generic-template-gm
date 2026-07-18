@@ -1,3 +1,3 @@
 event_inherited();
 /// @description 
-self.data.type = "PROP";
+self.util.setType("PROP");

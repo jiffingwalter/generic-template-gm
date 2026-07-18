@@ -14,8 +14,8 @@
     "path":"folders/Core/editor/gizmos/player_temp.yy",
   },
   "parentObjectId":{
-    "name":"object_generic",
-    "path":"objects/object_generic/object_generic.yy",
+    "name":"object_generic_GMObject",
+    "path":"objects/object_generic_GMObject/object_generic_GMObject.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
