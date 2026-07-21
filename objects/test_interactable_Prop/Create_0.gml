@@ -12,5 +12,5 @@ self.components.interactable.interactions = [
     new InteractionEvent("2", function(){
         consoleDebug($"SIGN WAS PRESSED AGAIN ({self.components.interactable.timesTriggered})");
         
-    }) 
+    })
 ]

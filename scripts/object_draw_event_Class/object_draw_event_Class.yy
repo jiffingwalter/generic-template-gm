@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"object_utility_Class",
+  "%Name":"object_draw_event_Class",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"object_utility_Class",
+  "name":"object_draw_event_Class",
   "parent":{
     "name":"classes",
     "path":"folders/Core/objects/classes.yy",
