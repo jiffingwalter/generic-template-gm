@@ -4,6 +4,6 @@ if (activeDrawEventsLength > 0){
     draw_self();
     for (var i = 0; i < activeDrawEventsLength; i++){
         var drawEvent = self.activeDrawEvents[i];
-        drawEvent.callback();
+        if (is_callable(drawEvent.callback)) drawEvent.callback();
     }
 }

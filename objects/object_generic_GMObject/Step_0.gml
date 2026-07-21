@@ -8,14 +8,21 @@ if (componentNamesLength > 0){
 }
 
 /* DRAW EVENTS */
-// read through draw event array, decrement definite draw events and remove ones that have expired
+// read through draw event array, decrement definite draw events, then clean up ones that have expired
 var activeDrawEventsLength = array_length(self.activeDrawEvents);
 if (activeDrawEventsLength > 0){
     for (var i = 0; i < activeDrawEventsLength; i++){
         var drawEvent = self.activeDrawEvents[i];
         if (!is_undefined(drawEvent.duration) && drawEvent.duration > 0){
             drawEvent.duration--;
-        } else if (drawEvent.duration <= 0){
+        }
+    }
+    // step backward through event array for completed draw events and remove them
+    for (var i = activeDrawEventsLength - 1; i > 0; i--){
+        var drawEvent = self.activeDrawEvents[i];
+        consoleDebug($"checking {i}: {drawEvent}");    
+        if (!is_undefined(drawEvent.duration) && drawEvent.duration <= 0){
+            consoleDebug($"removing draw event {i}: {drawEvent}");
             array_delete(self.activeDrawEvents, i, 1);
         }
     }

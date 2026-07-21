@@ -33,8 +33,9 @@ function ObjectUtility(GMObject) constructor{
     ///@description Add a new draw event to the draw event array.
     ///@param {Asset.ObjectDrawEvent} drawEventIn: The draw event to be added
     ///@returns {Real}: Returns the new length of the array
-    static addDrawEvent = function (drawEventIn){
-        array_push(self.owner.activeDrawEvents, drawEventIn);
+    static addDrawEvent = function (callbackIn, durationIn = undefined, labelIn = ""){
+        var newDrawEvent = new ObjectDrawEvent(callbackIn, durationIn, labelIn)
+        array_push(self.owner.activeDrawEvents, newDrawEvent);
         return array_length(self.owner.activeDrawEvents);
     }
 }

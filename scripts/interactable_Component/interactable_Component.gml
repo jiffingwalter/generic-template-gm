@@ -3,12 +3,11 @@
 /// @param {Real} distanceIn: The distance of the interaction zone that defines if the object is in interactable range. Defaults to 32.
 /// @param {Real} zoneOffsetXIn: X offset of the interaction zone Defaults to 0.
 /// @param {Real} zoneOffsetYIn: Y offset of the interaction zone. Defaults to 0.
-/// @param {Array<Asset.GMObject>} allowableInteractorsIn: Any specific GMObjects that are allowed to interact on the owning object. Default is 
+/// @param {Array<Asset.GMObject>} allowableInteractorsIn: Any specific GMObjects that are allowed to interact on the owning object. Default is ANY
 function 
 InteractableComponent
     (ownerIn, distanceIn = 32, zoneOffsetXIn = 0, zoneOffsetYIn = 0, allowableInteractorsIn = [object_generic_GMObject]) : 
-ObjectComponent(ownerIn, "interactable")
- constructor {
+ObjectComponent(ownerIn, "interactable") constructor {
     distance = distanceIn; 
     zoneOffsetX = zoneOffsetXIn;
     zoneOffsetY = zoneOffsetYIn;
@@ -18,6 +17,8 @@ ObjectComponent(ownerIn, "interactable")
     interactions = [];
     currentIndex = 0;
     timesTriggered = 0;
+    
+    debugInteractorInZone = false;
     
     /// @description trigger the current interaction index
     function triggerCurrentInteraction(){
@@ -62,6 +63,7 @@ ObjectComponent(ownerIn, "interactable")
     /// @description interaction on-tick update
     function update(){
         // TODO: figure out how a non-player npc would "interact" here... just on intersection??
+        self.debugInteractorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
         if (
             isInteractable
             && array_length(self.allowableInteractors) > 0 
