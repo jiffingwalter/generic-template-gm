@@ -12,7 +12,7 @@ if (componentNamesLength > 0){
 var activeDrawEventsLength = array_length(self.activeDrawEvents);
 if (activeDrawEventsLength > 0){
     for (var i = 0; i < activeDrawEventsLength; i++){
-        var drawEvent = activeDrawEventsLength[i];
+        var drawEvent = self.activeDrawEvents[i];
         if (!is_undefined(drawEvent.duration) && drawEvent.duration > 0){
             drawEvent.duration--;
         } else if (drawEvent.duration <= 0){
