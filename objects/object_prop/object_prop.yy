@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"props",
-    "path":"folders/Core/objects/props.yy",
+    "path":"folders/Core/objects/types/props.yy",
   },
   "parentObjectId":{
     "name":"object_generic_GMObject",
