@@ -62,13 +62,12 @@ ObjectComponent(ownerIn, "interactable") constructor {
     
     /// @description interaction on-tick update
     function update(){
-        // TODO: figure out how a non-player npc would "interact" here... just on intersection??
-        self.debugInteractorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
+        self.interactorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
         if (
             isInteractable
             && array_length(self.allowableInteractors) > 0 
-            && collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true) != noone
-            && global.input.pressStart.INTERACT
+            && self.interactorInZone
+            && global.input.pressStart.INTERACT // TODO: figure out how a non-player npc would "interact" here... just on intersection??
         ){
             self.triggerCurrentInteraction();
         }

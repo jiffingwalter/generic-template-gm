@@ -8,7 +8,7 @@ self.components.interactable.interactions = [
         self.util.addDrawEvent(function(){
             draw_set_colour(c_white);
             draw_set_halign(fa_center);
-            draw_text(x, y - (self.sprite_height + 30), $"You read the sign. Holy moly...!");
+            draw_text(self.x, self.y - (self.sprite_height + 30), $"You read the sign. Holy moly...!");
         }, 150, $"sign_interact_text");
         self.components.interactable.nextInteraction();
     }),
@@ -17,15 +17,15 @@ self.components.interactable.interactions = [
         self.util.addDrawEvent(function(){
             draw_set_colour(c_white);
             draw_set_halign(fa_center);
-            draw_text(x, y - (self.sprite_height + 30), $"...it just says \"E\"");
+            draw_text(self.x, self.y - (self.sprite_height + 30), $"...it just says \"E\"");
         }, 150, "sign_interact_text");
     })
 ];
 
-self.util.addDrawEvent(new ObjectDrawEvent(function(){
+self.util.addDrawEvent(function(){
     draw_set_alpha(0.25);
     draw_circle_colour(self.x + self.components.interactable.zoneOffsetX, 
         self.y + self.components.interactable.zoneOffsetY, 
         self.components.interactable.distance, c_white, c_white, false);
     draw_set_alpha(1);
-}));
+});
