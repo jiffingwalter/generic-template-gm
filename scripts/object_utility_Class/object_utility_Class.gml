@@ -38,4 +38,16 @@ function ObjectUtility(GMObject) constructor{
         array_push(self.owner.activeDrawEvents, newDrawEvent);
         return array_length(self.owner.activeDrawEvents);
     }
+    
+    ///@description Looks up any draw events on the owning object of the given label and queues it for clean up on the next tick (set duration to 0)
+    ///@param {String} drawEventLabel: The label of the draw event(s) to queue for removal
+    static removeDrawEventsByLabel = function (drawEventLabel){
+        var activeDrawEventsLength = array_length(self.owner.activeDrawEvents)
+        for (var i = 0; i < activeDrawEventsLength; i++){
+            var drawEvent = self.owner.activeDrawEvents[i];
+            if (drawEvent.label == drawEventLabel){
+                drawEvent.duration = 0;
+            }
+        }
+    }
 }

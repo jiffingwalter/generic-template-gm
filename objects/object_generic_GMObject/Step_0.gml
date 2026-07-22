@@ -20,9 +20,7 @@ if (activeDrawEventsLength > 0){
     // step backward through event array for completed draw events and remove them
     for (var i = activeDrawEventsLength - 1; i > 0; i--){
         var drawEvent = self.activeDrawEvents[i];
-        consoleDebug($"checking {i}: {drawEvent}");    
         if (!is_undefined(drawEvent.duration) && drawEvent.duration <= 0){
-            consoleDebug($"removing draw event {i}: {drawEvent}");
             array_delete(self.activeDrawEvents, i, 1);
         }
     }

@@ -8,17 +8,17 @@ self.components.interactable.interactions = [
         self.util.addDrawEvent(function(){
             draw_set_colour(c_white);
             draw_set_halign(fa_center);
-            draw_text(x, y - (self.sprite_height + 10), $"SIGN WAS PRESSED ({self.components.interactable.timesTriggered})");
-        }, 50);
+            draw_text(x, y - (self.sprite_height + 30), $"You read the sign. Holy moly...!");
+        }, 150, $"sign_interact_text");
         self.components.interactable.nextInteraction();
     }),
     new InteractionEvent("2", function(){
-        consoleDebug($"SIGN WAS PRESSED AGAIN ({self.components.interactable.timesTriggered})");
+        self.util.removeDrawEventsByLabel($"sign_interact_text");
         self.util.addDrawEvent(function(){
             draw_set_colour(c_white);
             draw_set_halign(fa_center);
-            draw_text(x, y - (self.sprite_height + 10), $"SIGN WAS PRESSED AGAIN ({self.components.interactable.timesTriggered})");
-        }, 50);
+            draw_text(x, y - (self.sprite_height + 30), $"...it just says \"E\"");
+        }, 150, "sign_interact_text");
     })
 ];
 
