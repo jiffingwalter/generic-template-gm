@@ -6,7 +6,7 @@
   "name":"move_from_input_StateAction",
   "parent":{
     "name":"state_actions",
-    "path":"folders/Core/editor/gizmos/player_temp/states/state_actions.yy",
+    "path":"folders/Core/utilities/state_machine/state_actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
