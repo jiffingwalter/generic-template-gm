@@ -1,6 +1,0 @@
-/// @description ...
-/// @param {Type} name: ...
-/// @returns {Type}
-function Script16(){
-
-}

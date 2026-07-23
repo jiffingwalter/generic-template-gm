@@ -68,7 +68,6 @@
     {"id":{"name":"object_draw_event_Class","path":"scripts/object_draw_event_Class/object_draw_event_Class.yy",},},
     {"id":{"name":"object_utility_Class","path":"scripts/object_utility_Class/object_utility_Class.yy",},},
     {"id":{"name":"PROJECT","path":"scripts/PROJECT/PROJECT.yy",},},
-    {"id":{"name":"Script16","path":"scripts/Script16/Script16.yy",},},
     {"id":{"name":"state_action_Class","path":"scripts/state_action_Class/state_action_Class.yy",},},
     {"id":{"name":"state_machine_Class","path":"scripts/state_machine_Class/state_machine_Class.yy",},},
     {"id":{"name":"timer_Class","path":"scripts/timer_Class/timer_Class.yy",},},
