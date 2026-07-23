@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"test_objects",
-    "path":"folders/Core/objects/test_objects.yy",
+    "path":"folders/Core/systems/objects/test_objects.yy",
   },
   "parentObjectId":{
     "name":"object_prop",

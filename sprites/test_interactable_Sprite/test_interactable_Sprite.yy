@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"test_objects",
-    "path":"folders/Core/objects/test_objects.yy",
+    "path":"folders/Core/systems/objects/test_objects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

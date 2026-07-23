@@ -1,7 +1,7 @@
 event_inherited();
 
 /// Initialize components
-self.util.addComponent(new InteractableComponent(self, 32, 0, 0, [player_temp_object]));
+self.util.addComponent(new InteractableComponent(self, 32, 0, 0, [player_temp_Object]));
 
 self.components.interactable.interactions = [
     new InteractionEvent("1", function(){

@@ -6,7 +6,7 @@
   "name":"object_draw_event_Class",
   "parent":{
     "name":"classes",
-    "path":"folders/Core/objects/classes.yy",
+    "path":"folders/Core/systems/objects/classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

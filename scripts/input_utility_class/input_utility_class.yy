@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"input_utility_class",
+  "%Name":"input_utility_Class",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"input_utility_class",
+  "name":"input_utility_Class",
   "parent":{
     "name":"input",
-    "path":"folders/Core/input.yy",
+    "path":"folders/Core/systems/input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

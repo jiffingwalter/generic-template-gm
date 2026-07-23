@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"null_StateAction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"null_StateAction",
+  "parent":{
+    "name":"state_actions",
+    "path":"folders/Core/editor/gizmos/player_temp/states/state_actions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"player_temp_object",
+  "%Name":"player_temp_Object",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"player_temp_object",
+  "name":"player_temp_Object",
   "overriddenProperties":[],
   "parent":{
     "name":"player_temp",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"editor_player_spr",
-    "path":"sprites/editor_player_spr/editor_player_spr.yy",
+    "name":"editor_player_Sprite",
+    "path":"sprites/editor_player_Sprite/editor_player_Sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

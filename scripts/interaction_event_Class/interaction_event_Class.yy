@@ -6,7 +6,7 @@
   "name":"interaction_event_Class",
   "parent":{
     "name":"interactable_component",
-    "path":"folders/Core/objects/components/interactable_component.yy",
+    "path":"folders/Core/systems/objects/components/interactable_component.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

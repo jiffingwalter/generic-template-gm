@@ -6,7 +6,7 @@
   "name":"object_component_Class",
   "parent":{
     "name":"components",
-    "path":"folders/Core/objects/components.yy",
+    "path":"folders/Core/systems/objects/components.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

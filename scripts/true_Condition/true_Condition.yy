@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"true_Condition",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"true_Condition",
+  "parent":{
+    "name":"action_conditions",
+    "path":"folders/Core/editor/gizmos/player_temp/states/action_conditions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
