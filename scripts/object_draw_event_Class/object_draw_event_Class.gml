@@ -5,5 +5,6 @@
 function ObjectDrawEvent(callbackIn, durationIn = undefined, labelIn = undefined) constructor {
     callback = callbackIn;
     duration = durationIn;
+    durationRemaining = durationIn;
     label = labelIn;
 }

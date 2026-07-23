@@ -13,7 +13,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     zoneOffsetY = zoneOffsetYIn;
     allowableInteractors = allowableInteractorsIn; 
     
-    isInteractable = true; 
+    isInteractable = true;
     interactions = [];
     currentIndex = 0;
     timesTriggered = 0;
