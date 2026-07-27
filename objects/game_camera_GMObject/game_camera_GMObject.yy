@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"editor_camera_Sprite",
+    "path":"sprites/editor_camera_Sprite/editor_camera_Sprite.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
