@@ -65,6 +65,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
         self.interactorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
         if (
             isInteractable
+            && array_length(self.interactions) > 0
             && array_length(self.allowableInteractors) > 0 
             && self.interactorInZone
             && global.input.pressStart.INTERACT // TODO: figure out how a non-player npc would "interact" here... just on intersection??
