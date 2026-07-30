@@ -20,10 +20,24 @@ ObjectComponent(ownerIn, "interactable") constructor {
     
     debugInteractorInZone = false;
     
+    /// @description add an interaction event object to the interactions array, optionally at a specified index
+    /// @param {Asset.InteractionEvent} interactionIn: New interaction event
+    /// @param {Real} index: Optional, index to insert the interaction at
+    function addInteraction(interactionIn, index = undefined){
+        if (is_instanceof(interactionIn, InteractionEvent)) {
+            var insertAt = (index)? index : array_length(self.interactions);
+            array_insert(self.interactions, insertAt, interactionIn);
+        } else {
+            consoleWarn($"Tried to add non-interaction event to interaction array");
+        }
+        return self;
+    }
+    
     /// @description trigger the current interaction index
     function triggerCurrentInteraction(){
         self.interactions[currentIndex].trigger();
         self.timesTriggered++;
+        return self;
     }
     
     /// @description parse interactions array to get the index of the provided interaction by name

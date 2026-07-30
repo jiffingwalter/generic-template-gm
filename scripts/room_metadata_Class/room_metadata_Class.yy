@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"room_metadata_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"room_metadata_Class",
+  "parent":{
+    "name":"room",
+    "path":"folders/Core/systems/room.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

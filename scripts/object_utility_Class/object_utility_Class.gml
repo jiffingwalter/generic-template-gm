@@ -8,7 +8,7 @@ function ObjectUtility(GMObject) constructor{
     ///@returns {Bool}: Success
     static setType = function(newType){
         if (!array_contains(global.PROJECT.OBJECT_TYPES,newType)){
-            consoleWarn($"WARNING: tried to set an object to unknown type ({type})");
+            consoleWarn($"WARNING: tried to set an object to unknown type ({newType})");
             return false;
         } else {
             self.owner.type = newType;

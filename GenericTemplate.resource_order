@@ -34,6 +34,7 @@
     {"name":"object_component_Class","order":2,"path":"scripts/object_component_Class/object_component_Class.yy",},
     {"name":"object_draw_event_Class","order":1,"path":"scripts/object_draw_event_Class/object_draw_event_Class.yy",},
     {"name":"PROJECT","order":7,"path":"scripts/PROJECT/PROJECT.yy",},
+    {"name":"room_metadata_Class","order":2,"path":"scripts/room_metadata_Class/room_metadata_Class.yy",},
     {"name":"state_action_Class","order":1,"path":"scripts/state_action_Class/state_action_Class.yy",},
     {"name":"timer_Class","order":2,"path":"scripts/timer_Class/timer_Class.yy",},
     {"name":"true_Condition","order":1,"path":"scripts/true_Condition/true_Condition.yy",},
