@@ -47,7 +47,7 @@ function ObjectUtility(GMObject) constructor{
     ///@param {String} drawEventLabel: The label of the draw event(s) to queue for removal
     static removeDrawEvents = function (drawEventLabel){
         parseDrawEventsByLabel(drawEventLabel, function(drawEvent){
-            if (!is_undefined(drawEvent.durationRemaining)) drawEvent.durationRemaining = 0;
+            drawEvent.durationRemaining = 0;
         });
     }
     

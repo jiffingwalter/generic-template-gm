@@ -36,7 +36,7 @@ with (sign2Instance){
         self.util.addDrawEvent(function(){
             draw_set_colour(c_white);
             draw_set_halign(fa_center);
-            draw_text(self.x, self.y - (self.sprite_height + 30), $"...it just says \"E\"");
+            draw_text(self.x, self.y - (self.sprite_height + 30), $"...it just says \"E\".");
         }, 150, "sign_interact_text");
     }));
 }

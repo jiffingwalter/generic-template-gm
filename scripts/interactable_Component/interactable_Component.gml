@@ -1,4 +1,5 @@
 /// @description Component to enable interaction on an object from the player when the "INTERACT" input is pressed within its interaction zone
+///              Provides methods to run functions when an object is inside the interaction zone as well
 /// @param {Asset.GMObject} ownerIn: Owning object reference
 /// @param {Real} distanceIn: The distance of the interaction zone that defines if the object is in interactable range. Defaults to 32.
 /// @param {Real} zoneOffsetXIn: X offset of the interaction zone Defaults to 0.
@@ -17,8 +18,9 @@ ObjectComponent(ownerIn, "interactable") constructor {
     interactions = [];
     currentIndex = 0;
     timesTriggered = 0;
-    
-    debugInteractorInZone = false;
+    onEnterZone = function (){};
+    onExitZone = function (){};
+    interactorInZone = false;
     
     /// @description add an interaction event object to the interactions array, optionally at a specified index
     /// @param {Asset.InteractionEvent} interactionIn: New interaction event
@@ -76,15 +78,30 @@ ObjectComponent(ownerIn, "interactable") constructor {
     
     /// @description interaction on-tick update
     function update(){
+        // current interaction zone status...
+        var interactorWasInZone = self.interactorInZone;
         self.interactorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
-        if (
+        
+        var interactionIsValid = (
             isInteractable
             && array_length(self.interactions) > 0
             && array_length(self.allowableInteractors) > 0 
             && self.interactorInZone
-            && global.input.pressStart.INTERACT // TODO: figure out how a non-player npc would "interact" here... just on intersection??
-        ){
+        );
+        
+        // check for interaction from player, trigger current interaction if so...
+        if (interactionIsValid && global.input.pressStart.INTERACT){ // TODO: figure out how a non-player npc would "interact" here... just on intersection??
             self.triggerCurrentInteraction();
+        }
+        
+        // enter & exit zone functions...
+        var interactorEntered = (!interactorWasInZone && self.interactorInZone);
+        if (is_callable(self.onEnterZone) && interactorEntered){
+            self.onEnterZone();
+        }
+        var interactorExited = (interactorWasInZone && !self.interactorInZone);
+        if (is_callable(self.onExitZone) && interactorExited){
+            self.onExitZone();
         }
     }
 }
