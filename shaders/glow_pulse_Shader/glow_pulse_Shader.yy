@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"glow_pulse_Shader",
+  "name":"glow_pulse_Shader",
+  "parent":{
+    "name":"shaders",
+    "path":"folders/Core/utilities/shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

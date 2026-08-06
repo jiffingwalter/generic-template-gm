@@ -1,5 +1,6 @@
-draw_self();
 /// @description 
+draw_self();
+
 var activeDrawEventsLength = array_length(self.activeDrawEvents);
 if (activeDrawEventsLength > 0){
     for (var i = 0; i < activeDrawEventsLength; i++){

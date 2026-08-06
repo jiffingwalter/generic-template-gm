@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"timer_Class",
   "parent":{
-    "name":"utilities",
-    "path":"folders/Core/utilities.yy",
+    "name":"state_machine",
+    "path":"folders/Core/utilities/state_machine.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
