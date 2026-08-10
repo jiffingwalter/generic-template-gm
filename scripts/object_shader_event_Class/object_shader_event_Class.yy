@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"object_shader_event_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"object_shader_event_Class",
+  "parent":{
+    "name":"classes",
+    "path":"folders/Core/systems/objects/classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

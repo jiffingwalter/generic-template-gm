@@ -6,4 +6,5 @@ self.components = {};
 self.componentNames = [];
 
 // Draw functions
-self.activeDrawEvents = [];
+self.activeDrawEvents = []; //ObjectDrawEvent
+self.activeShader = undefined; //ObjectShaderEvent

@@ -34,6 +34,7 @@
     {"name":"null_StateAction","order":1,"path":"scripts/null_StateAction/null_StateAction.yy",},
     {"name":"object_component_Class","order":2,"path":"scripts/object_component_Class/object_component_Class.yy",},
     {"name":"object_draw_event_Class","order":1,"path":"scripts/object_draw_event_Class/object_draw_event_Class.yy",},
+    {"name":"object_shader_event_Class","order":2,"path":"scripts/object_shader_event_Class/object_shader_event_Class.yy",},
     {"name":"PROJECT","order":7,"path":"scripts/PROJECT/PROJECT.yy",},
     {"name":"room_metadata_Class","order":2,"path":"scripts/room_metadata_Class/room_metadata_Class.yy",},
     {"name":"shader_Class","order":2,"path":"scripts/shader_Class/shader_Class.yy",},

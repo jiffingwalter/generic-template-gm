@@ -7,6 +7,8 @@ gameCameraInstance.followTarget = playerInstance;
 var sign1Instance = instance_find(rm1_sign_1,0);
 var sign2Instance = instance_find(rm1_sign_2,0);
 
+// TODO: when starting room script system, make function that accepts an instance, callback function, and an input variable struct? 
+//      basically would do the "with" but creates repeatable pattern for "injecting" input variables from the script so it doesn't have to be typed everytime
 with (sign1Instance){
     input = {
         camera: gameCameraInstance,

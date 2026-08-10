@@ -67,6 +67,7 @@
     {"id":{"name":"null_StateAction","path":"scripts/null_StateAction/null_StateAction.yy",},},
     {"id":{"name":"object_component_Class","path":"scripts/object_component_Class/object_component_Class.yy",},},
     {"id":{"name":"object_draw_event_Class","path":"scripts/object_draw_event_Class/object_draw_event_Class.yy",},},
+    {"id":{"name":"object_shader_event_Class","path":"scripts/object_shader_event_Class/object_shader_event_Class.yy",},},
     {"id":{"name":"object_utility_Class","path":"scripts/object_utility_Class/object_utility_Class.yy",},},
     {"id":{"name":"PROJECT","path":"scripts/PROJECT/PROJECT.yy",},},
     {"id":{"name":"room_metadata_Class","path":"scripts/room_metadata_Class/room_metadata_Class.yy",},},

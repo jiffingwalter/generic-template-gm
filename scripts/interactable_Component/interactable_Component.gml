@@ -107,7 +107,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
             consoleDebug(self.owner);
             self.onEnterZone();
             self.owner.util.addDrawEvent(function(){
-                // TODO: make class out of shader logic & reference so it can be reused easier
+                // TODO: once the shader class and generic object have been wired up, make this simply call applyShader for the shader and uniform
                 shader_set(glow_pulse_Shader);
                 shader_set_uniform_f(shader_get_uniform(glow_pulse_Shader, "brightness"), 0.25 + sin(current_time / 300) * 0.25);
                 draw_self();

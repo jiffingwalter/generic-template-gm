@@ -1,7 +1,7 @@
 /// @description Wrapper class for shaders. Contains methods for creating the shader and holds its expected uniform(s)
 /// @param {Asset.Shader} shaderIn: Shader reference to wrap around
 /// @param {Array<String>} uniformsArray: Uniform string names to initialize
-function shader_Class(shaderIn,uniformNamesIn){
+function Shader(shaderIn,uniformNamesIn){
     shader = shaderIn;
     uniformNames = uniformNamesIn;
     uniforms = {};

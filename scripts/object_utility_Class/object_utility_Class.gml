@@ -76,4 +76,11 @@ function ObjectUtility(GMObject) constructor{
         }
         return foundDrawEvents;
     }
+    
+    ///@description Apply a shader to the object
+    static applyShader = function (shader, input){
+        // TODO: this will create a new ObjectShaderEvent on the owning object
+        // must provide it a Shader class, and a list of the uniforms and inputs for each
+        // look into any error handling that needs to be done here for validating uniforms so it doesn't explode if wrong input
+    }
 }
