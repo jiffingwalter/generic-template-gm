@@ -21,6 +21,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     onEnterZone = function (){};
     onExitZone = function (){};
     interactorInZone = false;
+    shaderGlowLabel = "interactable:player_nearby_glow";
     
     /// @description add an interaction event object to the interactions array, optionally at a specified index
     /// @param {Asset.InteractionEvent} interactionIn: New interaction event
@@ -33,6 +34,12 @@ ObjectComponent(ownerIn, "interactable") constructor {
             consoleWarn($"Tried to add non-interaction event to interaction array");
         }
         return self;
+    }
+    
+    /// @description disables interaction on the object
+    function disableInteraction(){
+        self.isInteractable = false;
+        self.owner.util.removeDrawEvents(shaderGlowLabel);
     }
     
     /// @description trigger the current interaction index
@@ -96,12 +103,21 @@ ObjectComponent(ownerIn, "interactable") constructor {
         
         // enter & exit zone functions...
         var interactorEntered = (!interactorWasInZone && self.interactorInZone);
-        if (is_callable(self.onEnterZone) && interactorEntered){
+        if (self.isInteractable && interactorEntered && is_callable(self.onEnterZone)){
+            consoleDebug(self.owner);
             self.onEnterZone();
+            self.owner.util.addDrawEvent(function(){
+                // TODO: make class out of shader logic & reference so it can be reused easier
+                shader_set(glow_pulse_Shader);
+                shader_set_uniform_f(shader_get_uniform(glow_pulse_Shader, "brightness"), 0.25 + sin(current_time / 300) * 0.25);
+                draw_self();
+                shader_reset();
+            }, undefined, shaderGlowLabel);
         }
         var interactorExited = (interactorWasInZone && !self.interactorInZone);
-        if (is_callable(self.onExitZone) && interactorExited){
+        if (self.isInteractable && interactorExited && is_callable(self.onExitZone)){
             self.onExitZone();
+            self.owner.util.removeDrawEvents(shaderGlowLabel);
         }
     }
 }

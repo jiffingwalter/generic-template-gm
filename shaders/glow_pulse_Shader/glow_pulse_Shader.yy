@@ -4,7 +4,7 @@
   "name":"glow_pulse_Shader",
   "parent":{
     "name":"shaders",
-    "path":"folders/Core/utilities/shaders.yy",
+    "path":"folders/Core/systems/shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

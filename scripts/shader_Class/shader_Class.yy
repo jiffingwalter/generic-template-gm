@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shader_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shader_Class",
+  "parent":{
+    "name":"shaders",
+    "path":"folders/Core/systems/shaders.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
