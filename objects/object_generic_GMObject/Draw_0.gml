@@ -8,10 +8,14 @@ if (activeDrawEventsLength > 0){
         if (is_callable(drawEvent.callback)) drawEvent.callback();
     }
 }
-if (!is_undefined(self.activeShader)){
-    // TODO: inputify this, make dynamic based on activeShader
-    shader_set(glow_pulse_Shader);
-    shader_set_uniform_f(shader_get_uniform(glow_pulse_Shader, "brightness"), 0.25 + sin(current_time / 300) * 0.25);
+// 
+if (!is_undefined(self.activeShaderEvent)){
+    shader_set(self.activeShaderEvent.shader);
+    for (var i = 0; i < self.activeShaderEvent.uniformCount; i++){
+        var uniformName = self.activeShaderEvent.uniformInputs[i].name;
+        var uniformInput = (is_callable(self.activeShaderEvent.uniformInputs[i].input) ? self.activeShaderEvent.uniformInputs[i].input() : self.activeShaderEvent.uniformInputs[i].input);
+        shader_set_uniform_f(self.activeShaderEvent.shader.uniforms[$ uniformName], uniformInput);
+    }
     draw_self();
     shader_reset();
 }

@@ -7,4 +7,4 @@ self.componentNames = [];
 
 // Draw functions
 self.activeDrawEvents = []; //ObjectDrawEvent
-self.activeShader = undefined; //ObjectShaderEvent
+self.activeShaderEvent = undefined; //ObjectShaderEvent

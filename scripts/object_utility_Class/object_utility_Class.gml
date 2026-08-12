@@ -78,9 +78,12 @@ function ObjectUtility(GMObject) constructor{
     }
     
     ///@description Apply a shader to the object
-    static applyShader = function (shader, input){
-        // TODO: this will create a new ObjectShaderEvent on the owning object
-        // must provide it a Shader class, and a list of the uniforms and inputs for each
-        // look into any error handling that needs to be done here for validating uniforms so it doesn't explode if wrong input
+    ///@param {Asset.Shader} shader: The shader class to apply
+    ///@param {Array<Struct>} uniformInputs: Optional; An array of any uniform inputs of the format: {uniformName, uniformInput}. Uniform input can be a callback for logic 
+    ///@return {Asset.ObjectShaderEvent} The newly assigned shader event
+    static applyShader = function (shader, uniformInput = undefined){
+        var newShaderEvent = new ObjectShaderEvent(shader, uniformInput);
+        self.owner.activeShaderEvent = newShaderEvent;
+        return newShaderEvent;
     }
 }
