@@ -51,7 +51,8 @@
   "resources":[
     {"id":{"name":"bonsai_actor","path":"objects/bonsai_actor/bonsai_actor.yy",},},
     {"id":{"name":"game_camera_GMObject","path":"objects/game_camera_GMObject/game_camera_GMObject.yy",},},
-    {"id":{"name":"input_manager_Object","path":"objects/input_manager_Object/input_manager_Object.yy",},},
+    {"id":{"name":"INITIALIZE_GAME_GMObject","path":"objects/INITIALIZE_GAME_GMObject/INITIALIZE_GAME_GMObject.yy",},},
+    {"id":{"name":"input_manager_GMObject","path":"objects/input_manager_GMObject/input_manager_GMObject.yy",},},
     {"id":{"name":"object_generic_GMObject","path":"objects/object_generic_GMObject/object_generic_GMObject.yy",},},
     {"id":{"name":"object_prop","path":"objects/object_prop/object_prop.yy",},},
     {"id":{"name":"player_temp_Object","path":"objects/player_temp_Object/player_temp_Object.yy",},},
@@ -78,7 +79,7 @@
     {"id":{"name":"timer_Class","path":"scripts/timer_Class/timer_Class.yy",},},
     {"id":{"name":"true_Condition","path":"scripts/true_Condition/true_Condition.yy",},},
     {"id":{"name":"example_Shader","path":"shaders/example_Shader/example_Shader.yy",},},
-    {"id":{"name":"glow_pulse_Shader","path":"shaders/glow_pulse_Shader/glow_pulse_Shader.yy",},},
+    {"id":{"name":"glow_Shader","path":"shaders/glow_Shader/glow_Shader.yy",},},
     {"id":{"name":"bonsai_spr","path":"sprites/bonsai_spr/bonsai_spr.yy",},},
     {"id":{"name":"editor_camera_Sprite","path":"sprites/editor_camera_Sprite/editor_camera_Sprite.yy",},},
     {"id":{"name":"editor_player_Sprite","path":"sprites/editor_player_Sprite/editor_player_Sprite.yy",},},

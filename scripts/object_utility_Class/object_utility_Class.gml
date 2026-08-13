@@ -86,4 +86,9 @@ function ObjectUtility(GMObject) constructor{
         self.owner.activeShaderEvent = newShaderEvent;
         return newShaderEvent;
     }
+    
+    ///@description Clear the object's current shader event
+    static clearActiveShader = function(){
+        self.owner.activeShaderEvent = undefined;
+    }
 }

@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"glow_pulse_Shader",
-  "name":"glow_pulse_Shader",
+  "%Name":"glow_Shader",
+  "name":"glow_Shader",
   "parent":{
     "name":"shaders",
     "path":"folders/Core/systems/shaders.yy",

@@ -10,9 +10,10 @@ if (activeDrawEventsLength > 0){
 }
 // 
 if (!is_undefined(self.activeShaderEvent)){
-    shader_set(self.activeShaderEvent.shader);
+    shader_set(self.activeShaderEvent.shader.get());
     for (var i = 0; i < self.activeShaderEvent.uniformCount; i++){
         var uniformName = self.activeShaderEvent.uniformInputs[i].name;
+        // v make this less dirty looking and better support arrays v
         var uniformInput = (is_callable(self.activeShaderEvent.uniformInputs[i].input) ? self.activeShaderEvent.uniformInputs[i].input() : self.activeShaderEvent.uniformInputs[i].input);
         shader_set_uniform_f(self.activeShaderEvent.shader.uniforms[$ uniformName], uniformInput);
     }

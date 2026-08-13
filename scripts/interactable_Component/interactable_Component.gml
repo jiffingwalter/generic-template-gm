@@ -106,18 +106,15 @@ ObjectComponent(ownerIn, "interactable") constructor {
         if (self.isInteractable && interactorEntered && is_callable(self.onEnterZone)){
             consoleDebug(self.owner);
             self.onEnterZone();
-            self.owner.util.addDrawEvent(function(){
-                // TODO: once the shader class and generic object have been wired up, make this simply call applyShader for the shader and uniform
-                shader_set(glow_pulse_Shader);
-                shader_set_uniform_f(shader_get_uniform(glow_pulse_Shader, "brightness"), 0.25 + sin(current_time / 300) * 0.25);
-                draw_self();
-                shader_reset();
-            }, undefined, shaderGlowLabel);
+            self.owner.util.applyShader(global.shaders.glow, [{name: "brightness", input: function(){
+                return 0.25 + sin(current_time / 300) * 0.25;
+            }}]);
+            
         }
         var interactorExited = (interactorWasInZone && !self.interactorInZone);
         if (self.isInteractable && interactorExited && is_callable(self.onExitZone)){
             self.onExitZone();
-            self.owner.util.removeDrawEvents(shaderGlowLabel);
+            self.owner.util.clearActiveShader();
         }
     }
 }
