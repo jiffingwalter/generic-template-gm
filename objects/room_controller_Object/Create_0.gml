@@ -12,16 +12,17 @@ var sign2Instance = instance_find(rm1_sign_2,0);
 with (sign1Instance){
     input = {
         camera: gameCameraInstance,
-        player: playerInstance
+        player: playerInstance,
+        sign2: sign2Instance
     }
     
     self.components.interactable
     .addInteraction(new InteractionEvent("1", function(){
-        camera.followTarget = input.sign2;
+        input.camera.followTarget = input.sign2;
         self.components.interactable.nextInteraction();
     }))
     .addInteraction(new InteractionEvent("2", function(){
-        camera.followTarget = input.player;
+        input.camera.followTarget = input.player;
         self.components.interactable.disableInteraction();
     }));
 }

@@ -39,7 +39,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @description disables interaction on the object
     function disableInteraction(){
         self.isInteractable = false;
-        self.owner.util.removeDrawEvents(shaderGlowLabel);
+        self.owner.util.clearActiveShader();
     }
     
     /// @description trigger the current interaction index
@@ -106,7 +106,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
         if (self.isInteractable && interactorEntered && is_callable(self.onEnterZone)){
             consoleDebug(self.owner);
             self.onEnterZone();
-            self.owner.util.applyShader(global.shaders.glow, [{name: "brightness", input: function(){
+            self.owner.util.applyShader(global.shaders.glow, [{name: "brightness", input: function(){ // TODO: make this into a generic function
                 return 0.25 + sin(current_time / 300) * 0.25;
             }}]);
             
