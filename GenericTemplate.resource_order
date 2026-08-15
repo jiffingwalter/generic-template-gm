@@ -40,6 +40,7 @@
     {"name":"PROJECT","order":7,"path":"scripts/PROJECT/PROJECT.yy",},
     {"name":"room_metadata_Class","order":2,"path":"scripts/room_metadata_Class/room_metadata_Class.yy",},
     {"name":"shader_Class","order":2,"path":"scripts/shader_Class/shader_Class.yy",},
+    {"name":"shader_uniform_input_Class","order":4,"path":"scripts/shader_uniform_input_Class/shader_uniform_input_Class.yy",},
     {"name":"state_action_Class","order":1,"path":"scripts/state_action_Class/state_action_Class.yy",},
     {"name":"timer_Class","order":4,"path":"scripts/timer_Class/timer_Class.yy",},
     {"name":"true_Condition","order":1,"path":"scripts/true_Condition/true_Condition.yy",},

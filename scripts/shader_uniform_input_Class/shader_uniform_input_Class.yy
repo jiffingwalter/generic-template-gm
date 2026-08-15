@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shader_uniform_input_Class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shader_uniform_input_Class",
+  "parent":{
+    "name":"shaders",
+    "path":"folders/Core/systems/shaders.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

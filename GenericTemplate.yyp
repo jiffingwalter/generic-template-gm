@@ -74,6 +74,7 @@
     {"id":{"name":"PROJECT","path":"scripts/PROJECT/PROJECT.yy",},},
     {"id":{"name":"room_metadata_Class","path":"scripts/room_metadata_Class/room_metadata_Class.yy",},},
     {"id":{"name":"shader_Class","path":"scripts/shader_Class/shader_Class.yy",},},
+    {"id":{"name":"shader_uniform_input_Class","path":"scripts/shader_uniform_input_Class/shader_uniform_input_Class.yy",},},
     {"id":{"name":"state_action_Class","path":"scripts/state_action_Class/state_action_Class.yy",},},
     {"id":{"name":"state_machine_Class","path":"scripts/state_machine_Class/state_machine_Class.yy",},},
     {"id":{"name":"timer_Class","path":"scripts/timer_Class/timer_Class.yy",},},
