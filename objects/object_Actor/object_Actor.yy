@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"test_interactable_Prop",
+  "%Name":"object_Actor",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"test_interactable_Prop",
+  "name":"object_Actor",
   "overriddenProperties":[],
   "parent":{
-    "name":"test_objects",
-    "path":"folders/Core/systems/objects/test_objects.yy",
+    "name":"actors",
+    "path":"folders/Core/systems/objects/types/actors.yy",
   },
   "parentObjectId":{
-    "name":"object_Prop",
-    "path":"objects/object_Prop/object_Prop.yy",
+    "name":"object_generic_GMObject",
+    "path":"objects/object_generic_GMObject/object_generic_GMObject.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"test_interactable_Sprite",
-    "path":"sprites/test_interactable_Sprite/test_interactable_Sprite.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"test_interactable_Prop",
+  "%Name":"player_temp_Actor",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"test_interactable_Prop",
+  "name":"player_temp_Actor",
   "overriddenProperties":[],
   "parent":{
-    "name":"test_objects",
-    "path":"folders/Core/systems/objects/test_objects.yy",
+    "name":"player_temp",
+    "path":"folders/Content/actors/player_temp.yy",
   },
   "parentObjectId":{
-    "name":"object_Prop",
-    "path":"objects/object_Prop/object_Prop.yy",
+    "name":"object_Actor",
+    "path":"objects/object_Actor/object_Actor.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"test_interactable_Sprite",
-    "path":"sprites/test_interactable_Sprite/test_interactable_Sprite.yy",
+    "name":"player_temp_stand_idle_front_Sprite",
+    "path":"sprites/player_temp_stand_idle_front_Sprite/player_temp_stand_idle_front_Sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,5 +1,5 @@
 /// @description 
-// METADATA TEST
+// METADATA TEST -- this would all be injected into the room via some sort of look up that checks to see if the current room has scripts and what 
 var gameCameraInstance = instance_find(game_camera_GMObject, 0);
 var playerInstance = instance_find(player_temp_Object, 0);
 gameCameraInstance.followTarget = playerInstance;
