@@ -1,8 +1,6 @@
 {
   "FolderOrderSettings":[
     {"name":"Content","order":6,"path":"folders/Content.yy",},
-    {"name":"bonsai","order":1,"path":"folders/Content/actors/bonsai.yy",},
-    {"name":"sprites","order":2,"path":"folders/Content/actors/bonsai/sprites.yy",},
     {"name":"player_temp","order":2,"path":"folders/Content/actors/player_temp.yy",},
     {"name":"sprites","order":1,"path":"folders/Content/actors/player_temp/sprites.yy",},
     {"name":"scene","order":1,"path":"folders/Content/scene.yy",},
