@@ -21,12 +21,11 @@ ObjectComponent(ownerIn, "interactable") constructor {
     onEnterZone = function (){};
     onExitZone = function (){};
     interactorInZone = false;
-    shaderGlowLabel = "interactable:player_nearby_glow";
     
     /// @description add an interaction event object to the interactions array, optionally at a specified index
     /// @param {Asset.InteractionEvent} interactionIn: New interaction event
     /// @param {Real} index: Optional, index to insert the interaction at
-    function addInteraction(interactionIn, index = undefined){
+    static addInteraction = function(interactionIn, index = undefined){
         if (is_instanceof(interactionIn, InteractionEvent)) {
             var insertAt = (index)? index : array_length(self.interactions);
             array_insert(self.interactions, insertAt, interactionIn);
@@ -37,13 +36,13 @@ ObjectComponent(ownerIn, "interactable") constructor {
     }
     
     /// @description disables interaction on the object
-    function disableInteraction(){
+    static disableInteraction = function(){
         self.isInteractable = false;
         self.owner.util.clearActiveShader();
     }
     
     /// @description trigger the current interaction index
-    function triggerCurrentInteraction(){
+    static triggerCurrentInteraction = function(){
         self.interactions[currentIndex].trigger();
         self.timesTriggered++;
         return self;
@@ -52,7 +51,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @description parse interactions array to get the index of the provided interaction by name
     /// @param {String} searchName: the name to search for
     /// @returns {Real} index of found interaction, or -1 if no interaction with input name is found
-    function getInteractionIndexByName(searchName){
+    static getInteractionIndexByName = function(searchName){
         var foundInteractionIndex
         for (var i = 0; i < array_length(self.interactions); i++){
             var interaction = self.interactions[i];
@@ -64,7 +63,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @description set interaction index with safeguards for OOB
     /// @param {Real} newIndex: new interaction index
     /// @returns {Real} new interaction index, or -1 if couldn't set it
-    function setInteractionIndex(newIndex){
+    static setInteractionIndex = function(newIndex){
         if (newIndex >= 0 && newIndex < array_length(self.interactions)){
             self.currentIndex = newIndex;
             return self.currentIndex;
@@ -76,7 +75,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     
     /// @description increment interaction index with safeguards
     /// @returns {Bool} true if incremented to next interaction, false if no more interactions to increment
-    function nextInteraction(){
+    static nextInteraction = function(){
         if (!is_undefined(self.interactions[self.currentIndex + 1])){
             self.currentIndex++;
             return true;
@@ -84,7 +83,7 @@ ObjectComponent(ownerIn, "interactable") constructor {
     }
     
     /// @description interaction on-tick update
-    function update(){
+    static update = function(){
         // current interaction zone status...
         var interactorWasInZone = self.interactorInZone;
         self.interactorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
