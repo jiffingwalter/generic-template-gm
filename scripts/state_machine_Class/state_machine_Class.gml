@@ -1,29 +1,29 @@
 /// @description Defines a state controller class for holding state and logic, made up of StateAction classes
-/// @param {Struct} _owner: The owning parent object that will be modified by the state
-/// @param {Struct} _stateStruct: Optional, shorthand initialization of state struct. a struct with key/value pairs of possible states with values of array of StateActions
-function StateMachine(_owner, _stateStruct = {}) constructor{
+/// @param {Asset.GMObject} ownerIn: The owning parent object that will be modified by the state
+/// @param {Struct} stateStructIn: Optional, shorthand initialization of state struct. a struct with key/value pairs of possible states with values of array of StateActions
+function StateMachine(ownerIn, stateStructIn = {}) constructor{
 	currentState = "_UNSET_";
 	previousState = "_UNSET_";
-	owner = _owner;
+	owner = ownerIn;
 	states = {};
 	stateNames = [];
 	
-	static _init = function(stateStructIn){
-		if (!is_undefined(stateStructIn) && struct_names_count(stateStructIn) > 0){
-			addStates(stateStructIn);
+	static _init = function(stateStruct){
+		if (!is_undefined(stateStruct) && struct_names_count(stateStruct) > 0){
+			addStates(stateStruct);
 		}
-	} _init(_stateStruct);
+	} _init(stateStructIn);
 	
 	/// Add a struct of one or more states to the state machine
-	/// @param {Struct} _stateStruct: A struct of StateActions. Keys act as the name of the new state, values should be a StateAction struct
-	static addStates = function(_stateStruct){
-		var newStateNames = struct_get_names(_stateStruct);
+	/// @param {Struct} stateStructIn: A struct of StateActions. Keys act as the name of the new state, values should be a StateAction struct
+	static addStates = function(stateStructIn){
+		var newStateNames = struct_get_names(stateStructIn);
 		
 		for (var i = 0; i < array_length(newStateNames); i++){
 			if (!is_undefined(states[$ newStateNames[i]])){
 				consoleWarn($"tried to add duplicate state in state machine ({newStateNames[i]})");
 			} else {
-				states[$ newStateNames[i]] = _stateStruct[$ newStateNames[i]];
+				states[$ newStateNames[i]] = stateStructIn[$ newStateNames[i]];
 			}
 		}
 		
