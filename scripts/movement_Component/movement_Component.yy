@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"movement_Component",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"movement_Component",
+  "parent":{
+    "name":"movement_component",
+    "path":"folders/Core/systems/objects/components/movement_component.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,7 @@
 /// @param {Real} zoneOffsetXIn: X offset of the interaction zone Defaults to 0.
 /// @param {Real} zoneOffsetYIn: Y offset of the interaction zone. Defaults to 0.
 /// @param {Array<Asset.GMObject>} allowableInteractorsIn: Any specific GMObjects that are allowed to interact on the owning object. Default is ANY
-function 
-InteractableComponent
+function InteractableComponent
     (ownerIn, distanceIn = 32, zoneOffsetXIn = 0, zoneOffsetYIn = 0, allowableInteractorsIn = [object_generic_GMObject]) : 
 ObjectComponent(ownerIn, "interactable") constructor {
     distance = distanceIn; 

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"animation_Component",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"animation_Component",
+  "parent":{
+    "name":"animation_component",
+    "path":"folders/Core/systems/objects/components/animation_component.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
