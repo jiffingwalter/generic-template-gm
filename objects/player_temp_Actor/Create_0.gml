@@ -1,8 +1,9 @@
 event_inherited();
 /// @description 
 self.util.addComponent(new MovementComponent(self));
+self.components.movement.moveSpeed = 5;
 
-// TEMP TEST - REFACTOR STATE TO COMPONENT ARCHITECTURE LATER
+// TEMP HARDCODED TEST - CREATE A STATE COMPONENT LATER
 self.components.state = new StateMachine(self);
 array_push(self.componentNames,"state");
 self.components.state.addStates({
@@ -17,3 +18,8 @@ self.components.state.addStates({
 		ActionMoveFromInput
 	)
 });
+
+self.util.addDrawEvent(function(){
+    draw_text(x, y - (self.sprite_height + 18), $"state: {self.components.state.currentState}");
+    draw_text(x, y - (self.sprite_height + 36), $"direction: {self.components.movement.currentDirection}");
+})

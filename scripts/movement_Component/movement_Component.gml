@@ -17,7 +17,7 @@ ObjectComponent(ownerIn, "movement") constructor{
         self.currentPosition.x = owner.x;
         self.currentPosition.y = owner.y;
         
-        // get current direction from last move
+        // get current direction from last move - TODO: only update this if a move happened previously
         self.currentDirection = point_direction(self.lastPosition.x, self.lastPosition.y, self.currentPosition.x, self.currentPosition.y);
         
         // get current velocity from last move?
