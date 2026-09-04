@@ -2,8 +2,26 @@
 /// @param {Asset.GMObject} ownerIn: Owning object reference
 function MovementComponent(ownerIn): 
 ObjectComponent(ownerIn, "movement") constructor{
-    movementEnabled = true;
+    owner = ownerIn;
+    enabled = true;
     moveSpeed = 0;
-    moveVelocity = 0;
-    moveDirection = "FRONT";
+    currentVelocity = 0;
+    currentDirection = 0;
+    currentPosition = {x: ownerIn.x, y: ownerIn.y};
+    lastPosition = {x: ownerIn.x, y: ownerIn.y};
+    
+    static update = function(){
+        // get current position from update
+        self.lastPosition.x = currentPosition.x;
+        self.lastPosition.y = currentPosition.y;
+        self.currentPosition.x = owner.x;
+        self.currentPosition.y = owner.y;
+        
+        // get current direction from last move
+        self.currentDirection = point_direction(self.lastPosition.x, self.lastPosition.y, self.currentPosition.x, self.currentPosition.y);
+        
+        // get current velocity from last move?
+        
+        // listen for movement commands from parent to make the next move
+    }
 }

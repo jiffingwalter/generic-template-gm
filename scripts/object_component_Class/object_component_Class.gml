@@ -4,4 +4,8 @@
 function ObjectComponent(ownerIn, componentNameIn){
     owner = ownerIn;
     componentName = componentNameIn;
+    
+    static update = function(){
+        
+    }
 }
