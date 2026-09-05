@@ -102,7 +102,6 @@ ObjectComponent(ownerIn, "interactable") constructor {
         // enter & exit zone functions...
         var interactorEntered = (!interactorWasInZone && self.interactorInZone);
         if (self.isInteractable && interactorEntered && is_callable(self.onEnterZone)){
-            consoleDebug(self.owner);
             self.onEnterZone();
             self.owner.util.applyShader(global.shaders.glow, [new ShaderUniformInput("brightness",function(){
                 return 0.25 + sin(current_time / 300) * 0.25;

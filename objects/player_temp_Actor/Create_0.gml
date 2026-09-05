@@ -21,5 +21,6 @@ self.components.state.addStates({
 
 self.util.addDrawEvent(function(){
     draw_text(x, y - (self.sprite_height + 18), $"state: {self.components.state.currentState}");
-    draw_text(x, y - (self.sprite_height + 36), $"direction: {self.components.movement.currentDirection}");
+    draw_text(x, y - (self.sprite_height + 36), $"facing: {self.components.movement.facing}");
+    draw_text(x, y - (self.sprite_height + 54), $"is moving: {self.components.movement.isMoving}");
 })

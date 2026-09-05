@@ -1,7 +1,7 @@
 event_inherited();
 
 /// Initialize components
-self.util.addComponent(new InteractableComponent(self, 32, 0, 0, [player_temp_Object]));
+self.util.addComponent(new InteractableComponent(self, 32, 0, 0, [object_Actor]));
 
 
 //self.util.addDrawEvent(function(){
