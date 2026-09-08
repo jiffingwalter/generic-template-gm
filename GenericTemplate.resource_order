@@ -48,6 +48,7 @@
     {"name":"state_action_Class","order":1,"path":"scripts/state_action_Class/state_action_Class.yy",},
     {"name":"timer_Class","order":4,"path":"scripts/timer_Class/timer_Class.yy",},
     {"name":"true_Condition","order":1,"path":"scripts/true_Condition/true_Condition.yy",},
+    {"name":"Sequence1","order":1,"path":"sequences/Sequence1/Sequence1.yy",},
     {"name":"glow_Shader","order":1,"path":"shaders/glow_Shader/glow_Shader.yy",},
     {"name":"editor_camera_Sprite","order":2,"path":"sprites/editor_camera_Sprite/editor_camera_Sprite.yy",},
     {"name":"editor_temp_bg_Sprite","order":1,"path":"sprites/editor_temp_bg_Sprite/editor_temp_bg_Sprite.yy",},

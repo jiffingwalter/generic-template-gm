@@ -1,7 +1,6 @@
 event_inherited();
 /// @description 
-self.util.addComponent(new MovementComponent(self));
-self.components.movement.moveSpeed = 5;
+self.util.addComponent(new MovementComponent(self, 5));
 
 // TEMP HARDCODED TEST - CREATE A STATE COMPONENT LATER
 self.components.state = new StateMachine(self);

@@ -85,6 +85,7 @@
     {"id":{"name":"state_machine_Class","path":"scripts/state_machine_Class/state_machine_Class.yy",},},
     {"id":{"name":"timer_Class","path":"scripts/timer_Class/timer_Class.yy",},},
     {"id":{"name":"true_Condition","path":"scripts/true_Condition/true_Condition.yy",},},
+    {"id":{"name":"Sequence1","path":"sequences/Sequence1/Sequence1.yy",},},
     {"id":{"name":"example_Shader","path":"shaders/example_Shader/example_Shader.yy",},},
     {"id":{"name":"glow_Shader","path":"shaders/glow_Shader/glow_Shader.yy",},},
     {"id":{"name":"editor_camera_Sprite","path":"sprites/editor_camera_Sprite/editor_camera_Sprite.yy",},},
