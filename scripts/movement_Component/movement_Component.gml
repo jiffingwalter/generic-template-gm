@@ -16,7 +16,7 @@ ObjectComponent(ownerIn, "movement") constructor{
             { lower: 45, upper: 135 }
         ],
         right: [
-            { lower: 0, upper: 25 },
+            { lower: 0, upper: 45 },
             { lower: 315, upper: 360 }
         ],
         front: [
@@ -38,8 +38,8 @@ ObjectComponent(ownerIn, "movement") constructor{
         self.isMoving = self.checkIfPositionChanged();
         
         // get current direction from last move
-        if (isMoving) self.facing = determineFacedDirection();
         self.moveDirection = point_direction(self.lastPosition.x, self.lastPosition.y, self.currentPosition.x, self.currentPosition.y);
+        if (isMoving) self.facing = determineFacedDirection();
 
         // get current velocity from last move?
         
