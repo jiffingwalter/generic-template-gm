@@ -26,7 +26,7 @@ ObjectComponent(ownerIn, "movement") constructor{
             { lower: 135, upper: 225 }
         ]
     };
-    facingKeys = variable_struct_get_names(self.facingBounds);
+    facingKeys = struct_get_names(self.facingBounds);
     facing = "front"; // todo: make this input dynamically
     
     static update = function(){

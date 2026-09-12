@@ -16,6 +16,7 @@
     {"name":"classes","order":4,"path":"folders/Core/systems/objects/classes.yy",},
     {"name":"components","order":3,"path":"folders/Core/systems/objects/components.yy",},
     {"name":"animation_component","order":4,"path":"folders/Core/systems/objects/components/animation_component.yy",},
+    {"name":"state_component","order":5,"path":"folders/Core/systems/objects/components/state_component.yy",},
     {"name":"interactable_component","order":1,"path":"folders/Core/systems/objects/components/interactable_component.yy",},
     {"name":"movement_component","order":3,"path":"folders/Core/systems/objects/components/movement_component.yy",},
     {"name":"test_objects","order":2,"path":"folders/Core/systems/objects/test_objects.yy",},

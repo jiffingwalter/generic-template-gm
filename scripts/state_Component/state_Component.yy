@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"state_Component",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"state_Component",
+  "parent":{
+    "name":"state_component",
+    "path":"folders/Core/systems/objects/components/state_component.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
