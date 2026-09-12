@@ -12,8 +12,8 @@ ObjectComponent(ownerIn, "state") constructor{
     
     ///@description adds a state machine facet to the state component
     static addStateFacet = function(facetName){
-        if (!array_contains(self.stateFacetKeys, facetName) || !is_undefined(self.stateFacets[facetName])){
-            stateFacets[facetName] = new StateMachine(self.owner);
+        if (!array_contains(self.stateFacetKeys, facetName) || is_undefined(self.stateFacets[$ facetName])){
+            self.stateFacets[$ facetName] = new StateMachine(self.owner);
             array_push(self.stateFacetKeys, facetName);
         } else {
             consoleWarn($"tried to add duplicate state facet into state component [{facetName}]","StateComponent");

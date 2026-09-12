@@ -8,38 +8,31 @@ function StateMachine(ownerIn, stateStructIn = {}) constructor{
 	states = {};
 	stateNames = [];
 	
-	static _init = function(stateStruct){
-		if (!is_undefined(stateStruct) && struct_names_count(stateStruct) > 0){
-			addStates(stateStruct);
-		}
-	} _init(stateStructIn);
-	
 	/// Add a struct of one or more states to the state machine
-	/// @param {Struct} stateStructIn: A struct of StateActions. Keys act as the name of the new state, values should be a StateAction struct
-	static addStates = function(stateStructIn){
-		var newStateNames = struct_get_names(stateStructIn);
-		
-		for (var i = 0; i < array_length(newStateNames); i++){
-			if (!is_undefined(states[$ newStateNames[i]])){
-				consoleWarn($"tried to add duplicate state in state machine ({newStateNames[i]})");
-			} else {
-				states[$ newStateNames[i]] = stateStructIn[$ newStateNames[i]];
-			}
-		}
+	/// @param {String} stateName: The name of the new state to add to the state machine. must be unique.
+    /// @param {Asset.StateMachine} stateObject: The initialized state data for the state.
+	static addState = function(stateName, stateObject){
+        if (!array_contains(stateNames, stateName) || is_undefined(states[$ stateName])){
+            states[$ stateName] = stateObject;
+        } else {
+            consoleWarn($"tried to add duplicate state in state machine ({stateName})","StateMachine");
+        }
 		
 		_resortStateNames();
 		return self;
 	}
 	
-	/// Resort the current states name list by priority order, larger priority values take precedence. Do this any time we add state(s) to the state machine to ensure priority is correct
-	static _resortStateNames = function(){
+	/// @description Resort the current states name list by priority order, larger priority values take precedence. Do this any time we add state(s) to the state machine to ensure priority is correct
+	/// @return {Array<String>} The updated state names
+    static _resortStateNames = function(){
 		stateNames = struct_get_names(states);
 		array_sort(stateNames,function(current,next){
 			return states[$ next].priority - states[$ current].priority;
 		});
+        return stateNames;
 	}
 	
-	/// On tick, parse through states defined in states array
+	/// @description On tick, parse through states defined in states array
 	/// @return {Struct} State action that was switched to or False if the state wasn't updated
 	static update = function(){
 		// for each state in priority order, check if the state's conditional passes and transition if so
@@ -62,7 +55,7 @@ function StateMachine(ownerIn, stateStructIn = {}) constructor{
 			state.update(owner);
 	}
 	
-	/// Set current state and run any enter/exit logic
+	/// @description Set current state and run any enter/exit logic
 	static setState = function(stateNameIn){
 		// if entering a new state... run exit logic for previous state and begin the next state
 		if (states[$ stateNameIn]){
