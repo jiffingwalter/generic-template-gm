@@ -3,18 +3,25 @@
 function StateComponent(ownerIn): 
 ObjectComponent(ownerIn, "state") constructor{
     owner = ownerIn;
-    stateFacets = {}; // {StateMachine}: struct of uniquely named state machines
-    stateFacetKeys = []; // [String]: keys of state machine struct
+    facets = {}; // {StateMachine}: struct of uniquely named state machines
+    facetKeys = []; // [String]: keys of state machine struct
     
     static update = function(){
+        var facetCount = array_length(facetKeys);
         // run the update function for each state machine added in the object in the order they were added
+        if (facetCount > 0){
+            for (var i = 0; i < facetCount; i++){
+              var facet = facets[$ facetKeys[i]];
+              facet.update();
+          }
+        }
     }
     
     ///@description adds a state machine facet to the state component
     static addStateFacet = function(facetName){
-        if (!array_contains(stateFacetKeys, facetName) || is_undefined(stateFacets[$ facetName])){
-            stateFacets[$ facetName] = new StateMachine(owner);
-            array_push(stateFacetKeys, facetName);
+        if (!array_contains(facetKeys, facetName) || is_undefined(facets[$ facetName])){
+            facets[$ facetName] = new StateMachine(owner);
+            array_push(facetKeys, facetName);
         } else {
             consoleWarn($"tried to add duplicate state facet into state component [{facetName}]","StateComponent");
         }
