@@ -26,20 +26,20 @@ ObjectComponent(ownerIn, "movement") constructor{
             { lower: 135, upper: 225 }
         ]
     };
-    facingKeys = struct_get_names(self.facingBounds);
+    facingKeys = struct_get_names(facingBounds);
     facing = "front"; // todo: make this input dynamically
     
     static update = function(){
         // get current position from update
-        self.lastPosition.x = currentPosition.x;
-        self.lastPosition.y = currentPosition.y;
-        self.currentPosition.x = owner.x;
-        self.currentPosition.y = owner.y;
-        self.isMoving = self.checkIfPositionChanged();
+        lastPosition.x = currentPosition.x;
+        lastPosition.y = currentPosition.y;
+        currentPosition.x = owner.x;
+        currentPosition.y = owner.y;
+        isMoving = checkIfPositionChanged();
         
         // get current direction from last move
-        self.moveDirection = point_direction(self.lastPosition.x, self.lastPosition.y, self.currentPosition.x, self.currentPosition.y);
-        if (isMoving) self.facing = determineFacedDirection();
+        moveDirection = point_direction(lastPosition.x, lastPosition.y, currentPosition.x, currentPosition.y);
+        if (isMoving) facing = determineFacedDirection();
 
         // get current velocity from last move?
         
@@ -55,15 +55,15 @@ ObjectComponent(ownerIn, "movement") constructor{
     /// @description Gets the current "facing" string from the facing bounds array based on if any of the set facing bounds match
     /// @returns {String} facing direction
     static determineFacedDirection = function(){
-        if (self.facingBounds){
-            for (var i = 0; i < array_length(self.facingKeys); i++){
-                var faceString = self.facingKeys[i];
-                var bounds = self.facingBounds[$ faceString];
+        if (facingBounds){
+            for (var i = 0; i < array_length(facingKeys); i++){
+                var faceString = facingKeys[i];
+                var bounds = facingBounds[$ faceString];
                 
                 for (var j = 0; j < array_length(bounds); j++){
                     var lowerBound = bounds[j].lower;
                     var upperBound = bounds[j].upper;
-                    if (self.moveDirection >= lowerBound && self.moveDirection < upperBound) return faceString;
+                    if (moveDirection >= lowerBound && moveDirection < upperBound) return faceString;
                 }
             }
             consoleWarn("Object fell through all face direction potentials...","MovementComponent.determineFacedDirection");

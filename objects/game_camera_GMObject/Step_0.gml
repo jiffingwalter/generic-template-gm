@@ -1,17 +1,17 @@
 /// @description 
-if (!is_undefined(self.followTarget)){
-    var newX = (followTarget.x - self.x) * 0.15;
-    var newY = (followTarget.y - self.y) * 0.15;
+if (!is_undefined(followTarget)){
+    var newX = (followTarget.x - x) * 0.15;
+    var newY = (followTarget.y - y) * 0.15;
     
-    self.x += newX;
-    self.y += newY;
+    x += newX;
+    y += newY;
 }
-if (!is_undefined(self.viewport.camera)){
-    self.viewport.widthOffset = camera_get_view_width(self.viewport.camera) * 0.5;
-    self.viewport.heightOffset = camera_get_view_height(self.viewport.camera) * 0.5;
+if (!is_undefined(viewport.camera)){
+    viewport.widthOffset = camera_get_view_width(viewport.camera) * 0.5;
+    viewport.heightOffset = camera_get_view_height(viewport.camera) * 0.5;
     
-    self.x = clamp(self.x, self.viewport.widthOffset, room_width - self.viewport.widthOffset);
-    self.y = clamp(self.y, self.viewport.heightOffset, room_height - self.viewport.heightOffset);
+    x = clamp(x, viewport.widthOffset, room_width - viewport.widthOffset);
+    y = clamp(y, viewport.heightOffset, room_height - viewport.heightOffset);
     
-    camera_set_view_pos(self.viewport.camera, self.x - self.viewport.widthOffset, y - self.viewport.heightOffset);
+    camera_set_view_pos(viewport.camera, x - viewport.widthOffset, y - viewport.heightOffset);
 }

@@ -14,8 +14,8 @@ function InputUtility() constructor{
 		}
 		
 		// build out shell bindings and pressed arrays...
-		for (var i = 0; i < array_length(self.actions); i++){
-			var action = self.actions[i];
+		for (var i = 0; i < array_length(actions); i++){
+			var action = actions[i];
 			global.input.bindings[$ action] = undefined;
 			global.input.pressed[$ action] = false;
             global.input.pressStart[$ action] = false;
@@ -37,24 +37,24 @@ function InputUtility() constructor{
 	/// on step input handler - read through input actions and flag if the associated binding is pressed
 	static onStep = function(){
 		// flag or keep flagged if input is pressed
-		for (var i = 0; i < array_length(self.actions); i++){
-			var key = global.input.bindings[$ self.actions[i]];
+		for (var i = 0; i < array_length(actions); i++){
+			var key = global.input.bindings[$ actions[i]];
             
-            var wasPressedPreviously = (global.input.pressed[$ self.actions[i]]);
+            var wasPressedPreviously = (global.input.pressed[$ actions[i]]);
             var isPressedNow = keyboard_check(ord(key))
             
             if (!wasPressedPreviously && isPressedNow){
-                global.input.pressStart[$ self.actions[i]] = true;
+                global.input.pressStart[$ actions[i]] = true;
             } else if (wasPressedPreviously && isPressedNow){
-                global.input.pressStart[$ self.actions[i]] = false;
+                global.input.pressStart[$ actions[i]] = false;
             }
             
-            global.input.pressed[$ self.actions[i]] = isPressedNow;
+            global.input.pressed[$ actions[i]] = isPressedNow;
             
             if (wasPressedPreviously && !isPressedNow){
-                global.input.pressEnd[$ self.actions[i]] = true;
+                global.input.pressEnd[$ actions[i]] = true;
             } else if (!wasPressedPreviously && !isPressedNow){
-                global.input.pressEnd[$ self.actions[i]] = false;
+                global.input.pressEnd[$ actions[i]] = false;
             }
 		}
 	}

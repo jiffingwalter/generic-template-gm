@@ -26,8 +26,8 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @param {Real} index: Optional, index to insert the interaction at
     static addInteraction = function(interactionIn, index = undefined){
         if (is_instanceof(interactionIn, InteractionEvent)) {
-            var insertAt = (index)? index : array_length(self.interactions);
-            array_insert(self.interactions, insertAt, interactionIn);
+            var insertAt = (index)? index : array_length(interactions);
+            array_insert(interactions, insertAt, interactionIn);
         } else {
             consoleWarn($"Tried to add non-interaction event to interaction array");
         }
@@ -36,14 +36,14 @@ ObjectComponent(ownerIn, "interactable") constructor {
     
     /// @description disables interaction on the object
     static disableInteraction = function(){
-        self.isInteractable = false;
-        self.owner.util.clearActiveShader();
+        isInteractable = false;
+        owner.util.clearActiveShader();
     }
     
     /// @description trigger the current interaction index
     static triggerCurrentInteraction = function(){
-        self.interactions[currentIndex].trigger();
-        self.timesTriggered++;
+        interactions[currentIndex].trigger();
+        timesTriggered++;
         return self;
     }
     
@@ -52,8 +52,8 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @returns {Real} index of found interaction, or -1 if no interaction with input name is found
     static getInteractionIndexByName = function(searchName){
         var foundInteractionIndex
-        for (var i = 0; i < array_length(self.interactions); i++){
-            var interaction = self.interactions[i];
+        for (var i = 0; i < array_length(interactions); i++){
+            var interaction = interactions[i];
             if (searchName == interaction.name) return i;
         }
         return -1;
@@ -63,9 +63,9 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @param {Real} newIndex: new interaction index
     /// @returns {Real} new interaction index, or -1 if couldn't set it
     static setInteractionIndex = function(newIndex){
-        if (newIndex >= 0 && newIndex < array_length(self.interactions)){
-            self.currentIndex = newIndex;
-            return self.currentIndex;
+        if (newIndex >= 0 && newIndex < array_length(interactions)){
+            currentIndex = newIndex;
+            return currentIndex;
         } else {
             consoleWarn($"tried to set an interaction to a non-existent key [{newIndex}] of interactable array");
             return -1;
@@ -75,8 +75,8 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @description increment interaction index with safeguards
     /// @returns {Bool} true if incremented to next interaction, false if no more interactions to increment
     static nextInteraction = function(){
-        if (!is_undefined(self.interactions[self.currentIndex + 1])){
-            self.currentIndex++;
+        if (!is_undefined(interactions[currentIndex + 1])){
+            currentIndex++;
             return true;
         } else return false;
     }
@@ -84,34 +84,34 @@ ObjectComponent(ownerIn, "interactable") constructor {
     /// @description interaction on-tick update
     static update = function(){
         // current interaction zone status...
-        var interactorWasInZone = self.interactorInZone;
-        self.interactorInZone = collision_circle(owner.x + self.zoneOffsetX, owner.y + self.zoneOffsetY, self.distance, self.allowableInteractors, false, true);
+        var interactorWasInZone = interactorInZone;
+        interactorInZone = collision_circle(owner.x + zoneOffsetX, owner.y + zoneOffsetY, distance, allowableInteractors, false, true);
         
         var interactionIsValid = (
             isInteractable
-            && array_length(self.interactions) > 0
-            && array_length(self.allowableInteractors) > 0 
-            && self.interactorInZone
+            && array_length(interactions) > 0
+            && array_length(allowableInteractors) > 0 
+            && interactorInZone
         );
         
         // check for interaction from player, trigger current interaction if so...
         if (interactionIsValid && global.input.pressStart.INTERACT){ // TODO: figure out how a non-player npc would "interact" here... just on intersection??
-            self.triggerCurrentInteraction();
+            triggerCurrentInteraction();
         }
         
         // enter & exit zone functions...
-        var interactorEntered = (!interactorWasInZone && self.interactorInZone);
-        if (self.isInteractable && interactorEntered && is_callable(self.onEnterZone)){
-            self.onEnterZone();
-            self.owner.util.applyShader(global.shaders.glow, [new ShaderUniformInput("brightness",function(){
+        var interactorEntered = (!interactorWasInZone && interactorInZone);
+        if (isInteractable && interactorEntered && is_callable(onEnterZone)){
+            onEnterZone();
+            owner.util.applyShader(global.shaders.glow, [new ShaderUniformInput("brightness",function(){
                 return 0.25 + sin(current_time / 300) * 0.25;
             })]);
             
         }
-        var interactorExited = (interactorWasInZone && !self.interactorInZone);
-        if (self.isInteractable && interactorExited && is_callable(self.onExitZone)){
-            self.onExitZone();
-            self.owner.util.clearActiveShader();
+        var interactorExited = (interactorWasInZone && !interactorInZone);
+        if (isInteractable && interactorExited && is_callable(onExitZone)){
+            onExitZone();
+            owner.util.clearActiveShader();
         }
     }
 }

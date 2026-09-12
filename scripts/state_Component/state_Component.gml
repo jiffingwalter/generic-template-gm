@@ -12,9 +12,9 @@ ObjectComponent(ownerIn, "state") constructor{
     
     ///@description adds a state machine facet to the state component
     static addStateFacet = function(facetName){
-        if (!array_contains(self.stateFacetKeys, facetName) || is_undefined(self.stateFacets[$ facetName])){
-            self.stateFacets[$ facetName] = new StateMachine(self.owner);
-            array_push(self.stateFacetKeys, facetName);
+        if (!array_contains(stateFacetKeys, facetName) || is_undefined(stateFacets[$ facetName])){
+            stateFacets[$ facetName] = new StateMachine(owner);
+            array_push(stateFacetKeys, facetName);
         } else {
             consoleWarn($"tried to add duplicate state facet into state component [{facetName}]","StateComponent");
         }

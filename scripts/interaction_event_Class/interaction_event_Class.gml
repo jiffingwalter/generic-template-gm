@@ -8,9 +8,9 @@ function InteractionEvent(nameIn, callbackIn = undefined) constructor{
     triggerCount = 0; // how many times has this interaction been triggered?
     
     function trigger(){
-        self.triggered = true;
-        self.triggerCount++;
-        if (is_callable(self.callback()))
-            return self.callback();
+        triggered = true;
+        triggerCount++;
+        if (is_callable(callback()))
+            return callback();
     }
 }

@@ -10,13 +10,13 @@ function Shader(shaderIn,uniformNamesIn = undefined) constructor {
         var uniformsArrayLength = array_length(uniformNames);
         if (uniformsArrayLength > 0){
             for (var i = 0; i < uniformsArrayLength; i++){
-                var newUniformName = self.uniformNames[i];
-                self.uniforms[$ newUniformName] = shader_get_uniform(self.shader, newUniformName);
+                var newUniformName = uniformNames[i];
+                uniforms[$ newUniformName] = shader_get_uniform(shader, newUniformName);
             }
         }
     } _init();
     
     function get(){
-        return self.shader;
+        return shader;
     }
 }

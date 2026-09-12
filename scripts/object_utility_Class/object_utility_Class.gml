@@ -11,7 +11,7 @@ function ObjectUtility(GMObject) constructor{
             consoleWarn($"tried to set an object to unknown type ({newType})");
             return false;
         } else {
-            self.owner.type = newType;
+            owner.type = newType;
             return true;
         }
     }
@@ -22,13 +22,13 @@ function ObjectUtility(GMObject) constructor{
     ///@returns {Asset.GMObject} updated GameMaker object for method chaining
     static addComponent = function(newComponent){
         var newComponentName = newComponent.componentName;
-        if (!is_undefined(newComponentName) && is_undefined(self.owner.components[$ newComponentName])){
-            self.owner.components[$ newComponentName] = newComponent;
-            array_push(self.owner.componentNames,newComponentName);
+        if (!is_undefined(newComponentName) && is_undefined(owner.components[$ newComponentName])){
+            owner.components[$ newComponentName] = newComponent;
+            array_push(owner.componentNames,newComponentName);
         } else {
             consoleWarn($"tried to add duplicate component in GMObject ({newComponentName})");
         }
-        return self.owner;
+        return owner;
     }
     
     /** DRAW EVENT FUNCTIONS **/
@@ -39,8 +39,8 @@ function ObjectUtility(GMObject) constructor{
     ///@returns {Real}: Returns the new length of the array
     static addDrawEvent = function (callbackIn, durationIn = undefined, labelIn = ""){
         var newDrawEvent = new ObjectDrawEvent(callbackIn, durationIn, labelIn);
-        array_push(self.owner.activeDrawEvents, newDrawEvent);
-        return array_length(self.owner.activeDrawEvents);
+        array_push(owner.activeDrawEvents, newDrawEvent);
+        return array_length(owner.activeDrawEvents);
     }
     
     ///@description Looks up any draw events on the owning object of the given label and queues it for clean up on the next tick (sets duration to 0)
@@ -65,10 +65,10 @@ function ObjectUtility(GMObject) constructor{
     ///@param {Function} callback: The logic to run on the draw event. Provides the found draw event if any
     ///@returns {Array<Asset.ObjectDrawEvent>} Array of found draw events that were acted upon
     static parseDrawEventsByLabel = function (drawEventLabel, callback){
-        var activeDrawEventsLength = array_length(self.owner.activeDrawEvents);
+        var activeDrawEventsLength = array_length(owner.activeDrawEvents);
         var foundDrawEvents = [];
         for (var i = 0; i < activeDrawEventsLength; i++){
-            var drawEvent = self.owner.activeDrawEvents[i];
+            var drawEvent = owner.activeDrawEvents[i];
             if (drawEvent.label == drawEventLabel){
                 callback(drawEvent);
                 array_push(foundDrawEvents, drawEvent);
@@ -83,12 +83,12 @@ function ObjectUtility(GMObject) constructor{
     ///@return {Asset.ObjectShaderEvent} The newly assigned shader event
     static applyShader = function (shader, uniformInput = undefined){
         var newShaderEvent = new ObjectShaderEvent(shader, uniformInput);
-        self.owner.activeShaderEvent = newShaderEvent;
+        owner.activeShaderEvent = newShaderEvent;
         return newShaderEvent;
     }
     
     ///@description Clear the object's current shader event
     static clearActiveShader = function(){
-        self.owner.activeShaderEvent = undefined;
+        owner.activeShaderEvent = undefined;
     }
 }
